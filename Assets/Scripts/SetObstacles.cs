@@ -28,7 +28,14 @@ public class SetObstacles : MonoBehaviour
             string[] tateLine = new String[5];
             for (int i = 0; i < 5; i++)
             {
-                tateLine[i] = obstaclesElement[Random.Range(0, 10)];
+                if (j < 5)
+                {
+                    tateLine[i] = "none";
+                }
+                else
+                {
+                    tateLine[i] = obstaclesElement[Random.Range(0, 10)];
+                }
             }   
             obstacles.Add(tateLine);
         }
