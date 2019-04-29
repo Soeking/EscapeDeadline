@@ -5,7 +5,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="Demo.cs" t="Include" />
+          <e p="BackGroundFloor.cs" t="Include" />
+          <e p="GlobalData.cs" t="Include" />
+          <e p="Objects.cs" t="Include" />
+          <e p="SetObstacles.cs" t="Include" />
         </e>
       </e>
       <e p="EscapeDeadline.sln" t="IncludeFlat" />
