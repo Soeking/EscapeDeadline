@@ -19,7 +19,7 @@ public class WallCollision : MonoBehaviour
                     break;
                 }
         }
-        gameObject.layer = (int)(gameObject.transform.position.y) + 12;
+        gameObject.layer = (int)(gameObject.transform.position.y) + 12; 
     }
 
     // Update is called once per frame

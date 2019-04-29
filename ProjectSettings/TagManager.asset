@@ -15,11 +15,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Lane1
+  - Lane2
+  - Lane3
+  - Lane4
+  - Lane5
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Player
+    uniqueID: 1094157073
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
