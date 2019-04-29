@@ -8,6 +8,7 @@ public class SetObstacles : MonoBehaviour
 {
     public static string[] obstaclesElement = { "car","cat","enemy","red","monster","none","none","none","none","none"};
     public static List<string[]> obstacles = new List<string[]>();
+    public static int range = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -28,20 +29,27 @@ public class SetObstacles : MonoBehaviour
             string[] tateLine = new String[5];
             for (int i = 0; i < 5; i++)
             {
-                tateLine[i] = obstaclesElement[Random.Range(0, 10)];
+                if (j < 5)
+                {
+                    tateLine[i] = "none";
+                }
+                else
+                {
+                    tateLine[i] = obstaclesElement[Random.Range(0, range)];
+                }
             }   
             obstacles.Add(tateLine);
         }
     }
     
-    public static void addLine()
+    public static string[] addLine()
     {
         string[] tateLine = new String[5];
         for (int i = 0; i < 5; i++)
         {
-            tateLine[i] = obstaclesElement[Random.Range(0, 10)];
-        }   
-        obstacles.Add(tateLine);
+            tateLine[i] = obstaclesElement[Random.Range(0, range)];
+        } 
+        return tateLine;
     }
 
     public static void deleteLine()

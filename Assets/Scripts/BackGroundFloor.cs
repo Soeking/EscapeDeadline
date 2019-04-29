@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Element : MonoBehaviour
+public class BackGroundFloor : MonoBehaviour
 {
-    
+    public static float speed = 1f;
     
     // Start is called before the first frame update
     void Start()
