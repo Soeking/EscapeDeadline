@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Object
-  - item
-  - Floor
-  - car
-  - cat
-  - enemy
-  - monster
-  - red
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - Lane1
-  - Lane2
-  - Lane3
-  - Lane4
-  - Lane5
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -46,9 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Player
-    uniqueID: 1094157073
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
