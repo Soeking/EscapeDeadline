@@ -12,7 +12,7 @@ public class Human : MonoBehaviour
     private float deltaTimes = 0f;
     private float stamina = 10f;
 
-    public static int layer;
+    public static int layer = 8;
     public static float playerMove;
 
     public Sprite Right;
@@ -28,6 +28,7 @@ public class Human : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        staminaSlider.value = stamina;
         this.quaternion = gameObject.transform.rotation;
         _changeSprite = change.GetComponent<ChangeSprite>();
     }
@@ -45,7 +46,7 @@ public class Human : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 7.5f), ForceMode2D.Impulse);
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 3.5f), ForceMode2D.Impulse);
                 Jumping = true;
             }
         }
@@ -56,7 +57,7 @@ public class Human : MonoBehaviour
     void Moving()
     {
         gameObject.transform.rotation = this.quaternion;
-        if (!Jumping) transform.position = new Vector3(transform.position.x, (int)Mathf.Round(transform.position.y), 0.0f);
+        //if (!Jumping) transform.position = new Vector3(transform.position.x, GlobalData.yPosition[-layer + 12], 0.0f);
         Transform myTransform = this.transform;
         Vector3 pos = myTransform.position;
         this.deltaTimes += Time.deltaTime;
@@ -85,10 +86,10 @@ public class Human : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) && layer < 12)
             {
-                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 7.5f), ForceMode2D.Impulse);
+                //gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 7.5f), ForceMode2D.Impulse);
+                BackGroundFloor.finishDash();
                 Jumping = true;
-                pos.y += 0.5f;
-                pos.y = (int)pos.y;
+                pos.y = GlobalData.yPosition[-layer + 11] + 0.5f;
                 myTransform.position = pos;//*/
                 gameObject.layer += 1;
                 UpDown = true;
@@ -98,6 +99,7 @@ public class Human : MonoBehaviour
                 /*pos.y -= 1f;
                 pos.y = (int)pos.y;
                 myTransform.position = pos;//*/
+                BackGroundFloor.finishDash();
                 gameObject.layer -= 1;
                 Jumping = true;
                 UpDown = true;
@@ -128,6 +130,22 @@ public class Human : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "red")
+        {
+            Destroy(collision.gameObject);
+            this.stamina += 3.0f;
+            if (this.stamina > 20.0f) this.stamina = 20.0f;
+            staminaSlider.value = stamina;
+        }
+        if(collision.gameObject.tag == "monster")
+        {
+            Destroy(collision.gameObject);
+            this.canChange = true;
+        }
+    }
+
     void useItem()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -135,6 +153,7 @@ public class Human : MonoBehaviour
             if (canChange)
             {
                 _changeSprite.changeSprites();
+                //this.canChange = false;
             }
         }
 

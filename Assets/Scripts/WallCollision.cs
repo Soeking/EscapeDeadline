@@ -13,17 +13,23 @@ public class WallCollision : MonoBehaviour
         this.quaternion = gameObject.transform.rotation;
         switch (gameObject.tag)
         {
-            case "Object":
+            case "car":
+            case "cat":
+            case "enemy":
                 {
                     break;
                 }
-            case "item":
+            case "red":
+            case "monster":
                 {
                     gameObject.GetComponent<Collider2D>().isTrigger = true;
                     break;
                 }
         }
-        gameObject.layer = (int)(gameObject.transform.position.y) + 12; 
+        for(int i = 0; i < GlobalData.yPosition.Length; i++)
+        {
+            if (gameObject.transform.position.y == GlobalData.yPosition[i]) gameObject.layer = 12 - i;
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +37,7 @@ public class WallCollision : MonoBehaviour
     {
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, position.y, 0.0f);
         gameObject.transform.rotation = this.quaternion;
-        if (gameObject.tag != "item")
+        if (gameObject.tag != "red" && gameObject.tag != "monster")
         {
             if (gameObject.layer == Human.layer)
             {
@@ -56,7 +62,23 @@ public class WallCollision : MonoBehaviour
     {
         if(collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
         {
-            //BackGroundFloor;
+            BackGroundFloor.onStop();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
+        {
+            BackGroundFloor.finishDash();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
+        {
+            BackGroundFloor.finishDash();
         }
     }
 
@@ -64,7 +86,7 @@ public class WallCollision : MonoBehaviour
     {
         if (collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
         {
-
+            
         }
     }
 }
