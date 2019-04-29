@@ -12,6 +12,7 @@ public class ChangeSprite : MonoBehaviour
     public GameObject redObj;
     public GameObject monsterObj;
     private float realtime = 0f;
+    private float blackouttime = 0f;
     public Sprite BackReal;
     public Sprite BackDream;
     public Sprite FloorReal;
@@ -32,7 +33,7 @@ public class ChangeSprite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!!GlobalData.isDream)
+        if (!GlobalData.isDream)
         {
             realtime += Time.deltaTime;
         }
@@ -41,6 +42,17 @@ public class ChangeSprite : MonoBehaviour
         {
             changeSprites();
             realtime = 0;
+        }
+
+        if (GlobalData.isBlackOut)
+        {
+            blackouttime += Time.deltaTime;
+        }
+
+        if (blackouttime>=0.6)
+        {
+            blackouttime = 0;
+            GlobalData.isBlackOut = false;
         }
     }
 

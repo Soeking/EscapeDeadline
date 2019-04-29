@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Human : MonoBehaviour
 {
-
+    private bool canChange = true;
     private bool UpDown = false;
     private bool Jumping = false;
     private const float moveSpeed = 3f;
     private float deltaTimes = 0f;
+    private float stamina = 10f;
 
     public static int layer;
+    public static float playerMove;
 
     public Sprite Right;
     public Sprite Left;
     public Sprite Normal;
     public Sprite Jump;
+    private ChangeSprite _changeSprite;
+    public GameObject change;
 
     Quaternion quaternion;
 
@@ -23,12 +27,17 @@ public class Human : MonoBehaviour
     void Start()
     {
         this.quaternion = gameObject.transform.rotation;
+        _changeSprite = change.GetComponent<ChangeSprite>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.Moving();
+        if (!GlobalData.isBlackOut)
+        {
+            this.Moving();
+            useItem();
+        }
 
         if (!Jumping)
         {
@@ -114,6 +123,30 @@ public class Human : MonoBehaviour
         if(collision.gameObject.tag == "Floor" && collision.gameObject.layer == gameObject.layer)
         {
             this.Jumping = false;
+        }
+    }
+
+    void useItem()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (canChange)
+            {
+                _changeSprite.changeSprites();
+            }
+        }
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            if (stamina>0)
+            {
+                stamina -= Time.deltaTime;
+                BackGroundFloor.isDash();
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.L))
+        {
+            BackGroundFloor.finishDash();
         }
     }
 }
