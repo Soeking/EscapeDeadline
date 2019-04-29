@@ -101,6 +101,10 @@ public class Objects : MonoBehaviour
                         GameObject obj = Instantiate(carObj, new Vector3(SpawnY, yPosition[i], 0), Quaternion.identity);
                         obj.name = "Car" + i.ToString();
                         obj.AddComponent<WallCollision>();
+                        if (!GlobalData.isDream)
+                        {
+                            obj.GetComponent<SpriteRenderer>().enabled = true;
+                        }
                     }
                     break;
                 case "cat":
@@ -108,6 +112,10 @@ public class Objects : MonoBehaviour
                         GameObject obj = Instantiate(catObj, new Vector3(SpawnY, yPosition[i], 0), Quaternion.identity);
                         obj.name = "Cat" + i.ToString();
                         obj.AddComponent<WallCollision>();
+                        if (!GlobalData.isDream)
+                        {
+                            obj.GetComponent<SpriteRenderer>().enabled = true;
+                        }
                     }
                     break;
                 case "enemy":
@@ -115,6 +123,11 @@ public class Objects : MonoBehaviour
                         GameObject obj = Instantiate(enemyObj, new Vector3(SpawnY, yPosition[i], 0), Quaternion.identity);
                         obj.name = "Enemy" + i.ToString();
                         obj.AddComponent<WallCollision>();
+                        if (!GlobalData.isDream)
+                        {
+                            obj.GetComponent<SpriteRenderer>().enabled = false;
+                            obj.GetComponent<BoxCollider2D>().enabled = false;
+                        }
                     }
                     break;
                 case "red":

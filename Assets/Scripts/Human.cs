@@ -138,10 +138,14 @@ public class Human : MonoBehaviour
 
         if (Input.GetKey(KeyCode.L))
         {
-            if (stamina>0)
+            while (stamina>0)
             {
                 stamina -= Time.deltaTime;
                 BackGroundFloor.isDash();
+                if (stamina<=0)
+                {
+                    break;
+                }
             }
         }
         else if (Input.GetKeyUp(KeyCode.L))

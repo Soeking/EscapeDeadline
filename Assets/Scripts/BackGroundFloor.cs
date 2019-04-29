@@ -23,15 +23,19 @@ public class BackGroundFloor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.Translate(Time.deltaTime * speed, 0f, 0f);
-        floor.transform.Translate(Time.deltaTime * speed, 0f, 0f);
-        if (this.gameObject.transform.position.x<=backLeft)
+        if (!GlobalData.isBlackOut)
         {
-            this.gameObject.transform.position = new Vector3(backRight, backOrigin.y);
-            floor.transform.position = new Vector3(backRight, floorOrigin.y);
+            this.gameObject.transform.Translate(Time.deltaTime * speed, 0f, 0f);
+            floor.transform.Translate(Time.deltaTime * speed, 0f, 0f);
+            if (this.gameObject.transform.position.x <= backLeft)
+            {
+                this.gameObject.transform.position = new Vector3(backRight, backOrigin.y);
+                floor.transform.position = new Vector3(backRight, floorOrigin.y);
+            }
+
+            moveSum -= Time.deltaTime * speed;
+            Debug.Log(moveSum);
         }
-        moveSum -= Time.deltaTime * speed;
-        Debug.Log(moveSum);
     }
 
     public static void isDash()

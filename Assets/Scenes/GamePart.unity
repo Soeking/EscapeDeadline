@@ -552,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717182027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -4, z: 0}
+  m_LocalPosition: {x: -1.8, y: -4, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -574,6 +574,7 @@ MonoBehaviour:
   Left: {fileID: 21300000, guid: 89f191be5c8d47f48b591bf55ff8e461, type: 3}
   Normal: {fileID: 21300000, guid: 30f28f61b4b5bb647b24ff94571a8340, type: 3}
   Jump: {fileID: 21300000, guid: aea398c66397a794c84fc19d617df158, type: 3}
+  change: {fileID: 931412866}
 --- !u!58 &717182031
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -741,15 +742,22 @@ MonoBehaviour:
   redObj: {fileID: 3781542770993817664, guid: 8a5f0171ba2a874449fd69858c8ce548, type: 3}
   monsterObj: {fileID: 7450367774793313709, guid: 63fb9e91559a93a4797a4b4acc712399,
     type: 3}
+  noneCar: {fileID: 3238791268769138262, guid: 9e7e5cffb4517cf449c687d419bd8c4b, type: 3}
+  noneCat: {fileID: 3238791268769138262, guid: 7893876a975f20c45879d5f252cebac1, type: 3}
+  noneEnemy: {fileID: 3238791268769138262, guid: 81517fc5e859b8b4bae76f853a3e945d,
+    type: 3}
+  noneRed: {fileID: 3238791268769138262, guid: 92336a4f8078f884590595792b9a6932, type: 3}
+  noneMons: {fileID: 3238791268769138262, guid: a2af68f9dd593c24ab81d019fea13619,
+    type: 3}
   BackReal: {fileID: 21300000, guid: 13f12fd3971871840b9e58de80e92ab4, type: 3}
   BackDream: {fileID: 21300000, guid: ddf191c0f61c1e84ea738fa6c3cfc9ef, type: 3}
   FloorReal: {fileID: 21300000, guid: 29d6fe66b2b119d4c9d6d29f8ddd3b9d, type: 3}
   FloorDream: {fileID: 21300000, guid: d0e7f0b6822d247458fbfcd83ab5c341, type: 3}
-  carPNG: {fileID: 21300000, guid: 3ab09839d7f788047b0728214958d164, type: 3}
-  catPNG: {fileID: 21300000, guid: 99752a6b83734b040bff64e30fc08698, type: 3}
-  enemyPNG: {fileID: 21300000, guid: c18b045b7babbca428cd9d9989fb1457, type: 3}
-  redPNG: {fileID: 21300000, guid: 5cd0ecea84375434fb4b2cb18af0fce1, type: 3}
-  monsterPNG: {fileID: 21300000, guid: fe626d8c31ca20541be6a1559c9d2a34, type: 3}
+  carPNG: {fileID: 0}
+  catPNG: {fileID: 0}
+  enemyPNG: {fileID: 0}
+  redPNG: {fileID: 0}
+  monsterPNG: {fileID: 0}
   Canvas: {fileID: 0}
 --- !u!4 &931412868
 Transform:

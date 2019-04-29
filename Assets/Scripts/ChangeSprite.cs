@@ -6,22 +6,12 @@ public class ChangeSprite : MonoBehaviour
 {
     public GameObject BackGroundObj;
     public GameObject FloorObj;
-    public GameObject carObj;
-    public GameObject catObj;
-    public GameObject enemyObj;
-    public GameObject redObj;
-    public GameObject monsterObj;
     private float realtime = 0f;
     private float blackouttime = 0f;
     public Sprite BackReal;
     public Sprite BackDream;
     public Sprite FloorReal;
     public Sprite FloorDream;
-    public Sprite carPNG;
-    public Sprite catPNG;
-    public Sprite enemyPNG;
-    public Sprite redPNG;
-    public Sprite monsterPNG;
     public Canvas Canvas;
     
     // Start is called before the first frame update
@@ -63,23 +53,65 @@ public class ChangeSprite : MonoBehaviour
         {
             BackGroundObj.GetComponent<SpriteRenderer>().sprite = BackReal;
             FloorObj.GetComponent<SpriteRenderer>().sprite = FloorReal;
-            carObj.GetComponent<SpriteRenderer>().sprite = carPNG;
-            catObj.GetComponent<SpriteRenderer>().sprite = catPNG;
-            enemyObj.GetComponent<SpriteRenderer>().sprite = null;
-            enemyObj.GetComponent<BoxCollider2D>().isTrigger = true;
-            redObj.GetComponent<SpriteRenderer>().sprite = null;
-            monsterObj.GetComponent<SpriteRenderer>().sprite = null;
+
+            GameObject[] cars = GameObject.FindGameObjectsWithTag("car");
+            foreach (var VARIABLE in cars)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            GameObject[] cats = GameObject.FindGameObjectsWithTag("cat");
+            foreach (var VARIABLE in cats)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            GameObject[] enemys = GameObject.FindGameObjectsWithTag("enemy");
+            foreach (var VARIABLE in enemys)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = false;
+                VARIABLE.GetComponent<BoxCollider2D>().enabled = false;
+            }
+            GameObject[] reds = GameObject.FindGameObjectsWithTag("red");
+            foreach (var VARIABLE in reds)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            GameObject[] monss = GameObject.FindGameObjectsWithTag("monster");
+            foreach (var VARIABLE in monss)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
         else
         {
             BackGroundObj.GetComponent<SpriteRenderer>().sprite = BackDream;
             FloorObj.GetComponent<SpriteRenderer>().sprite = FloorDream;
-            carObj.GetComponent<SpriteRenderer>().sprite = null;
-            catObj.GetComponent<SpriteRenderer>().sprite = null;
-            enemyObj.GetComponent<SpriteRenderer>().sprite = enemyPNG;
-            enemyObj.GetComponent<BoxCollider2D>().isTrigger = false;
-            redObj.GetComponent<SpriteRenderer>().sprite = redPNG;
-            monsterObj.GetComponent<SpriteRenderer>().sprite = monsterPNG;
+            
+            GameObject[] cars = GameObject.FindGameObjectsWithTag("car");
+            foreach (var VARIABLE in cars)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            GameObject[] cats = GameObject.FindGameObjectsWithTag("cat");
+            foreach (var VARIABLE in cats)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            GameObject[] enemys = GameObject.FindGameObjectsWithTag("enemy");
+            foreach (var VARIABLE in enemys)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = true;
+                VARIABLE.GetComponent<BoxCollider2D>().enabled = true;
+            }
+            GameObject[] reds = GameObject.FindGameObjectsWithTag("red");
+            foreach (var VARIABLE in reds)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            GameObject[] monss = GameObject.FindGameObjectsWithTag("monster");
+            foreach (var VARIABLE in monss)
+            {
+                VARIABLE.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
         GlobalData.changeReal();
     }
