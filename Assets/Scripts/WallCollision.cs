@@ -25,8 +25,21 @@ public class WallCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.tag != "item")
+        {
+            if (gameObject.layer == Human.layer)
+            {
+                this.gameObject.GetComponent<Collider2D>().isTrigger = false;
+                //this.gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
+            }
+            else if (gameObject.layer != Human.layer)
+            {
+                this.gameObject.GetComponent<Collider2D>().isTrigger = true;
+                //this.gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
+            }
+        }
         transform.Translate((float)(BackGroundFloor.speed * Time.deltaTime), 0.0f, 0.0f);
-        if(transform.position.x <= -12.0f)
+        if(transform.position.x <= -12.0f || transform.position.x >= 13.0f || transform.position.y <= -10.0f || transform.position.y >= 10.0f)
         {
             Destroy(gameObject);
         }
