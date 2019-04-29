@@ -9,6 +9,7 @@ public class Objects : MonoBehaviour
     public GameObject enemyObj;
     public GameObject redObj;
     public GameObject monsterObj;
+    private float[] yPosition = GlobalData.yPosition;
     
     // Start is called before the first frame update
     void Start()
@@ -26,19 +27,19 @@ public class Objects : MonoBehaviour
                 switch (SetObstacles.obstacles[i][j])
                 {
                     case "car":
-                        Instantiate(carObj, new Vector3((i - 5) * 2, j - 4, 0), Quaternion.identity);
+                        Instantiate(carObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                         break;
                     case "cat":
-                        Instantiate(catObj, new Vector3((i - 5) * 2, j - 4, 0), Quaternion.identity);
+                        Instantiate(catObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                         break;
                     case "enemy":
-                        Instantiate(enemyObj, new Vector3((i - 5) * 2, j - 4, 0), Quaternion.identity);
+                        Instantiate(enemyObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                         break;
                     case "red":
-                        Instantiate(redObj, new Vector3((i - 5) * 2, j - 4, 0), Quaternion.identity);
+                        Instantiate(redObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                         break;
                     case "monster":
-                        Instantiate(monsterObj, new Vector3((i - 5) * 2, j - 4, 0), Quaternion.identity);
+                        Instantiate(monsterObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                         break;
                     case "none":
                         break;
@@ -62,19 +63,19 @@ public class Objects : MonoBehaviour
             switch (newLine[i])
             {
                 case "car":
-                    Instantiate(carObj, new Vector3(10, i - 4, 0), Quaternion.identity);
+                    Instantiate(carObj, new Vector3(10, yPosition[i], 0), Quaternion.identity);
                     break;
                 case "cat":
-                    Instantiate(catObj, new Vector3(10, i - 4, 0), Quaternion.identity);
+                    Instantiate(catObj, new Vector3(10, yPosition[i], 0), Quaternion.identity);
                     break;
                 case "enemy":
-                    Instantiate(enemyObj, new Vector3(10, i - 4, 0), Quaternion.identity);
+                    Instantiate(enemyObj, new Vector3(10, yPosition[i], 0), Quaternion.identity);
                     break;
                 case "red":
-                    Instantiate(redObj, new Vector3(10, i - 4, 0), Quaternion.identity);
+                    Instantiate(redObj, new Vector3(10, yPosition[i], 0), Quaternion.identity);
                     break;
                 case "monster":
-                    Instantiate(monsterObj, new Vector3(10, i - 4, 0), Quaternion.identity);
+                    Instantiate(monsterObj, new Vector3(10, yPosition[i], 0), Quaternion.identity);
                     break;
                 case "none":
                     break;
