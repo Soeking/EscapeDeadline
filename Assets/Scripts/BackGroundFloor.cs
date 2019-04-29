@@ -6,7 +6,7 @@ public class BackGroundFloor : MonoBehaviour
 {
     public static float speed = -2f;
     private float right = GlobalData.right;
-    public static double moveSum = 0;
+    public static float moveSum = 0;
     public GameObject floor;
     private float backLeft = -8.45f;
     private float backRight = 9.09f;
@@ -34,7 +34,6 @@ public class BackGroundFloor : MonoBehaviour
             }
 
             moveSum -= Time.deltaTime * speed;
-            Debug.Log(moveSum);
         }
     }
 

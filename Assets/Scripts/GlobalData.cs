@@ -10,6 +10,7 @@ public static class GlobalData
     public static bool isDream = true;
     public static bool isBlackOut = false;
     public static float[] yPosition = {1f, -0.3f, -1.8f, -3, -4.3f};
+    public static float score;
 
     public static void change()
     {
