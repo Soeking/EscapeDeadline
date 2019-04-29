@@ -9,7 +9,7 @@ public class Objects : MonoBehaviour
     public GameObject enemyObj;
     public GameObject redObj;
     public GameObject monsterObj;
-    private float[] yPosition = {1f, -0.3f, -1.8f, -3, -4.3f};
+    private float[] yPosition = GlobalData.yPosition;
     
     // Start is called before the first frame update
     void Start()
