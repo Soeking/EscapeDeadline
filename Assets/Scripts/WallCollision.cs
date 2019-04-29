@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class WallCollision : MonoBehaviour
 {
+    Quaternion quaternion;
+    Vector3 position;
     // Start is called before the first frame update
     void Start()
     {
-        switch(gameObject.tag)
+        this.position = gameObject.transform.position;
+        this.quaternion = gameObject.transform.rotation;
+        switch (gameObject.tag)
         {
             case "Object":
                 {
@@ -25,6 +29,8 @@ public class WallCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, position.y, 0.0f);
+        gameObject.transform.rotation = this.quaternion;
         if (gameObject.tag != "item")
         {
             if (gameObject.layer == Human.layer)

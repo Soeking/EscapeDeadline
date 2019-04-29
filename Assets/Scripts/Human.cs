@@ -72,20 +72,23 @@ public class Human : MonoBehaviour
 
         if (!UpDown)
         {
-            if (Input.GetKey(KeyCode.W) && pos.y < 0)
+            if (Input.GetKey(KeyCode.W) && layer < 12)
             {
-                pos.y += 1f;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 7.5f), ForceMode2D.Impulse);
+                Jumping = true;
+                pos.y += 0.5f;
                 pos.y = (int)pos.y;
-                myTransform.position = pos;
-                gameObject.layer = (int)(pos.y) + 12;
+                myTransform.position = pos;//*/
+                gameObject.layer += 1;
                 UpDown = true;
             }
-            if (Input.GetKey(KeyCode.S) && pos.y > -4)
+            if (Input.GetKey(KeyCode.S) && layer > 8)
             {
-                pos.y -= 1f;
+                /*pos.y -= 1f;
                 pos.y = (int)pos.y;
-                myTransform.position = pos;
-                gameObject.layer = (int)(pos.y) + 12;
+                myTransform.position = pos;//*/
+                gameObject.layer -= 1;
+                Jumping = true;
                 UpDown = true;
             }
         }
@@ -106,7 +109,7 @@ public class Human : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Floor" && collision.gameObject.layer == gameObject.layer)
         {
