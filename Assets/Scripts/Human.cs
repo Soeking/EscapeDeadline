@@ -153,7 +153,7 @@ public class Human : MonoBehaviour
             if (canChange)
             {
                 _changeSprite.changeSprites();
-                //this.canChange = false;
+                this.canChange = false;
             }
         }
 
