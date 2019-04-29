@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="496127e4-093e-4e6c-a8a2-777431f3c914" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Clips/BlackOut.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Clips/BlackOut.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GamePart.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GamePart.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlobalData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlobalData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects.cs" afterDir="false" />
-    </list>
+    <list default="true" id="496127e4-093e-4e6c-a8a2-777431f3c914" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Objects.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state relative-caret-position="810">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <marker date="1556521967370" expanded="false" signature="6:78" ph="..." />
                 <marker date="1556521967370" expanded="true" signature="116:2864" ph="{...}" />
@@ -135,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalData.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -267,12 +262,12 @@
       <workItem from="1556429721081" duration="592000" />
       <workItem from="1556434343100" duration="10171000" />
       <workItem from="1556460609911" duration="2436000" />
-      <workItem from="1556515331522" duration="6019000" />
+      <workItem from="1556515331522" duration="6407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28591000" />
+    <option name="totallyTimeSpent" value="28979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,10 +450,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Objects.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalData.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <marker date="1556521967343" expanded="false" signature="6:78" ph="..." />
+            <marker date="1556521967343" expanded="true" signature="111:650" ph="{...}" />
+            <marker date="1556521967343" expanded="true" signature="431:468" ph="{...}" />
+            <marker date="1556521967343" expanded="true" signature="505:648" ph="{...}" />
+            <marker date="1556521967343" expanded="true" signature="532:581" ph="{...}" />
+            <marker date="1556521967343" expanded="true" signature="594:642" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Objects.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <marker date="1556521967370" expanded="false" signature="6:78" ph="..." />
             <marker date="1556521967370" expanded="true" signature="116:2864" ph="{...}" />
@@ -472,21 +482,6 @@
             <marker date="1556521967370" expanded="true" signature="1860:2862" ph="{...}" />
             <marker date="1556521967370" expanded="true" signature="1953:2856" ph="{...}" />
             <marker date="1556521967370" expanded="true" signature="1995:2846" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <marker date="1556521967343" expanded="false" signature="6:78" ph="..." />
-            <marker date="1556521967343" expanded="true" signature="111:650" ph="{...}" />
-            <marker date="1556521967343" expanded="true" signature="431:468" ph="{...}" />
-            <marker date="1556521967343" expanded="true" signature="505:648" ph="{...}" />
-            <marker date="1556521967343" expanded="true" signature="532:581" ph="{...}" />
-            <marker date="1556521967343" expanded="true" signature="594:642" ph="{...}" />
           </folding>
         </state>
       </provider>
