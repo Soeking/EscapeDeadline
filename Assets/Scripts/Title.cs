@@ -14,12 +14,10 @@ public class Title : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
-    }
-
-   public void OnClick()
-    {
-        SceneManager.LoadScene("Dream");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Real");
+        }
     }
 }
 

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Timers;
 public class Deadline : MonoBehaviour
 {
+    private float speed = 3f;
    
     // Start is called before the first frame update
     void Start()
@@ -15,19 +16,10 @@ public class Deadline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Transform myTransform = this.transform;
-        Vector3 pos = myTransform.position;
-
-
-
-        Timer timer = new Timer();
-        timer.Interval = 100;
-        timer.Elapsed += (s, e) => pos.y += 1f; myTransform.position = pos;
-        timer.Start();
-
-
-
+        if (!GlobalData.isBlackOut)
+        {
+            
+        }
     }
 
 

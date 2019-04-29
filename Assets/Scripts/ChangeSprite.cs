@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeSprite : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class ChangeSprite : MonoBehaviour
     public Sprite BackDream;
     public Sprite FloorReal;
     public Sprite FloorDream;
-    public Canvas Canvas;
+    public Image Screen;
+    private float alpha;
     
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class ChangeSprite : MonoBehaviour
             realtime += Time.deltaTime;
         }
 
-        if (realtime>=5.0)
+        if (realtime>=10.0)
         {
             changeSprites();
             realtime = 0;
@@ -37,12 +39,22 @@ public class ChangeSprite : MonoBehaviour
         if (GlobalData.isBlackOut)
         {
             blackouttime += Time.deltaTime;
-        }
 
-        if (blackouttime>=0.6)
+            if (blackouttime > 0.6)
+            {
+                Screen.GetComponent<Image>().color = new Color(0f, 0f, 0f, alpha);
+                alpha -= (float) (Time.deltaTime * 0.4);
+            }
+            
+            if (blackouttime>=1.0)
+            {
+                blackouttime = 0;
+                GlobalData.isBlackOut = false;
+            }
+        }
+        else
         {
-            blackouttime = 0;
-            GlobalData.isBlackOut = false;
+            alpha = 0;
         }
     }
 
@@ -118,6 +130,7 @@ public class ChangeSprite : MonoBehaviour
 
     public void blackOut()
     {
+        Screen.GetComponent<Image>().color = new Color(0f, 0f, 0f, 1f);
         GlobalData.isBlackOut = true;
     }
 }

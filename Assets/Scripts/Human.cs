@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Human : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Human : MonoBehaviour
     public Sprite Jump;
     private ChangeSprite _changeSprite;
     public GameObject change;
+    public Slider staminaSlider;
 
     Quaternion quaternion;
 
@@ -138,14 +140,11 @@ public class Human : MonoBehaviour
 
         if (Input.GetKey(KeyCode.L))
         {
-            while (stamina>0)
+            if (stamina>0)
             {
-                stamina -= Time.deltaTime;
+                stamina -= Time.deltaTime * 2;
                 BackGroundFloor.isDash();
-                if (stamina<=0)
-                {
-                    break;
-                }
+                staminaSlider.value = stamina;
             }
         }
         else if (Input.GetKeyUp(KeyCode.L))
