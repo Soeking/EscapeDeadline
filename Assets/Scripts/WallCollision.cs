@@ -7,10 +7,19 @@ public class WallCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.Translate(-0.5f, 0f, 0f);
-        /*this.gameObject.AddComponent<Rigidbody2D>();
-        GetComponent<Rigidbody2D>().gravityScale = 0;
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(-0.5f, 0.0f));//*/
+        switch(gameObject.tag)
+        {
+            case "Object":
+                {
+                    break;
+                }
+            case "item":
+                {
+                    gameObject.GetComponent<Collider2D>().isTrigger = true;
+                    break;
+                }
+        }
+        gameObject.layer = (int)(gameObject.transform.position.y) + 12;
     }
 
     // Update is called once per frame
@@ -28,6 +37,14 @@ public class WallCollision : MonoBehaviour
         if(collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
         {
             //BackGroundFloor;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
+        {
+
         }
     }
 }
