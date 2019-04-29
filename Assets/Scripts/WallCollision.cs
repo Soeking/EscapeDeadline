@@ -44,7 +44,8 @@ public class WallCollision : MonoBehaviour
                 //this.gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
             }
         }
-        transform.Translate((float)(BackGroundFloor.speed * Time.deltaTime), 0.0f, 0.0f);
+
+        if (!GlobalData.isBlackOut) transform.Translate((float) (BackGroundFloor.speed * Time.deltaTime), 0.0f, 0.0f);
         if(transform.position.x <= -12.0f || transform.position.x >= 13.0f || transform.position.y <= -10.0f || transform.position.y >= 10.0f)
         {
             Destroy(gameObject);
