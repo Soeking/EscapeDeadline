@@ -10,14 +10,14 @@ public class Deadline : MonoBehaviour
 {
     private float speed = 4f;
     public Text kyori;
-    private float far=300;
+    private float far;
     public GameObject Human;
     //public Human human;
    
     // Start is called before the first frame update
     void Start()
     {
-        
+        far = 300;
     }
 
     // Update is called once per frame
@@ -29,11 +29,12 @@ public class Deadline : MonoBehaviour
         }
 
         far = Human.transform.position.x - this.gameObject.transform.position.x;
-        kyori.text = far + "m";
-        if (far>=0)
+        if (far<=0)
         {
+            far = 0;
             gameOver();
         }
+        kyori.text = far + "m";
     }
 
     void gameOver()
