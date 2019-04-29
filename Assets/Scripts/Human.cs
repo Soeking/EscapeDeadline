@@ -28,6 +28,22 @@ public class Human : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.Moving();
+
+        if (!Jumping)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 7.5f), ForceMode2D.Impulse);
+                Jumping = true;
+            }
+        }
+
+        layer = gameObject.layer;
+    }
+
+    void Moving()
+    {
         gameObject.transform.rotation = this.quaternion;
         if (!Jumping) transform.position = new Vector3(transform.position.x, (int)Mathf.Round(transform.position.y), 0.0f);
         Transform myTransform = this.transform;
@@ -73,7 +89,7 @@ public class Human : MonoBehaviour
                 UpDown = true;
             }
         }
-        else if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             UpDown = false;
         }
@@ -88,17 +104,6 @@ public class Human : MonoBehaviour
             pos.x += moveSpeed * Time.deltaTime;
             myTransform.position = pos;
         }
-
-        if (!Jumping)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 7.5f), ForceMode2D.Impulse);
-                Jumping = true;
-            }
-        }
-
-        layer = gameObject.layer;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
