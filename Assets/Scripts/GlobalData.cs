@@ -8,6 +8,7 @@ public static class GlobalData
     public static List<string[]> globalList;
     public static float right = Screen.width / 2;
     public static bool isDream = true;
+    public static bool isBlackOut = false;
 
     public static void change()
     {

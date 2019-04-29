@@ -21,6 +21,7 @@ public class ChangeSprite : MonoBehaviour
     public Sprite enemyPNG;
     public Sprite redPNG;
     public Sprite monsterPNG;
+    public Canvas Canvas;
     
     // Start is called before the first frame update
     void Start()
@@ -73,6 +74,6 @@ public class ChangeSprite : MonoBehaviour
 
     public void blackOut()
     {
-        
+        GlobalData.isBlackOut = true;
     }
 }
