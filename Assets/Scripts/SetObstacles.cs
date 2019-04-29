@@ -6,9 +6,9 @@ using Random = UnityEngine.Random;
 
 public class SetObstacles : MonoBehaviour
 {
-    public static string[] obstaclesElement = { "car","cat","enemy","red","monster","none","none","none","none","none"};
+    public static string[] obstaclesElement = { "car","cat","enemy","none","none","none","none"};
     public static List<string[]> obstacles = new List<string[]>();
-    public static int range = 10;
+    public static int range = obstaclesElement.Length;
     
     // Start is called before the first frame update
     void Start()
