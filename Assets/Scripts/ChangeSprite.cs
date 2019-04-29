@@ -15,7 +15,12 @@ public class ChangeSprite : MonoBehaviour
     public Sprite FloorDream;
     public Image Screen;
     private float alpha;
-    
+
+    public AudioClip Dream;
+    public AudioClip Real;
+    private float SoundTime = 0;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +68,12 @@ public class ChangeSprite : MonoBehaviour
         blackOut();
         if (GlobalData.isDream)
         {
+            audioSource = gameObject.GetComponent<AudioSource>();
+            SoundTime = audioSource.time;
+            audioSource.clip = Real;
+            audioSource.time = SoundTime;
+            audioSource.Play();
+
             BackGroundObj.GetComponent<SpriteRenderer>().sprite = BackReal;
             FloorObj.GetComponent<SpriteRenderer>().sprite = FloorReal;
 
@@ -95,6 +106,12 @@ public class ChangeSprite : MonoBehaviour
         }
         else
         {
+            audioSource = gameObject.GetComponent<AudioSource>();
+            SoundTime = audioSource.time;
+            audioSource.clip = Dream;
+            audioSource.time = SoundTime;
+            audioSource.Play();
+
             BackGroundObj.GetComponent<SpriteRenderer>().sprite = BackDream;
             FloorObj.GetComponent<SpriteRenderer>().sprite = FloorDream;
             
