@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\GameJam\EscapeDeadline" t="IncludeFlat">
+    <e p="C:\GameJam\EscapeDeadline" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="BackGroundFloor.cs" t="Include" />
+          <e p="ChangeSprite.cs" t="Include" />
+          <e p="Deadline.cs" t="Include" />
+          <e p="Floor.cs" t="Include" />
+          <e p="GlobalData.cs" t="Include" />
+          <e p="Human.cs" t="Include" />
+          <e p="Objects.cs" t="Include" />
+          <e p="Result.cs" t="Include" />
+          <e p="SetObstacles.cs" t="Include" />
+          <e p="Title.cs" t="Include" />
+          <e p="WallCollision.cs" t="Include" />
+        </e>
+      </e>
       <e p="EscapeDeadline.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
     <e p="C:\Users\user\.Rider2018.2\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\user\.Rider2018.2\system\extResources" t="IncludeRecursive" />
