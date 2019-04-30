@@ -97,11 +97,13 @@ public class ChangeSprite : MonoBehaviour
             foreach (var VARIABLE in reds)
             {
                 VARIABLE.GetComponent<SpriteRenderer>().enabled = false;
+                VARIABLE.GetComponent<BoxCollider2D>().enabled = false;
             }
             GameObject[] monss = GameObject.FindGameObjectsWithTag("monster");
             foreach (var VARIABLE in monss)
             {
                 VARIABLE.GetComponent<SpriteRenderer>().enabled = false;
+                VARIABLE.GetComponent<BoxCollider2D>().enabled = false;
             }
         }
         else
@@ -135,11 +137,13 @@ public class ChangeSprite : MonoBehaviour
             foreach (var VARIABLE in reds)
             {
                 VARIABLE.GetComponent<SpriteRenderer>().enabled = true;
+                VARIABLE.GetComponent<BoxCollider2D>().enabled = true;
             }
             GameObject[] monss = GameObject.FindGameObjectsWithTag("monster");
             foreach (var VARIABLE in monss)
             {
                 VARIABLE.GetComponent<SpriteRenderer>().enabled = true;
+                VARIABLE.GetComponent<BoxCollider2D>().enabled = true;
             }
         }
         GlobalData.changeReal();

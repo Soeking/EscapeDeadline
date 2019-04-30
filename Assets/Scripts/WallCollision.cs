@@ -8,8 +8,7 @@ public class WallCollision : MonoBehaviour
     Vector3 position;
     public GameObject redObj;
     public GameObject monsterObj;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         this.position = gameObject.transform.position;
@@ -95,6 +94,7 @@ public class WallCollision : MonoBehaviour
             else
             {
                 BackGroundFloor.onStop();
+                GlobalData.isStop = true;
             }
         }
     }
@@ -104,6 +104,7 @@ public class WallCollision : MonoBehaviour
         if (collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
         {
             BackGroundFloor.finishDash();
+            GlobalData.isStop = false;
         }
     }
 

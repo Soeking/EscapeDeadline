@@ -97,6 +97,7 @@ public class Human : MonoBehaviour
                 myTransform.position = pos;//*/
                 gameObject.layer += 1;
                 UpDown = true;
+                GlobalData.isStop = false;
             }
             if (Input.GetKey(KeyCode.S) && layer > 8)
             {
@@ -107,6 +108,7 @@ public class Human : MonoBehaviour
                 gameObject.layer -= 1;
                 Jumping = true;
                 UpDown = true;
+                GlobalData.isStop = false;
             }
         }
         else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
@@ -177,18 +179,25 @@ public class Human : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.L))
+        if (!GlobalData.isStop)
         {
-            if (stamina>0)
+            if (Input.GetKey(KeyCode.L))
             {
-                stamina -= Time.deltaTime * 2;
-                BackGroundFloor.isDash();
-                staminaSlider.value = stamina;
+                if (stamina > 0)
+                {
+                    stamina -= Time.deltaTime * 2;
+                    BackGroundFloor.isDash();
+                    staminaSlider.value = stamina;
+                    if (stamina <= 0)
+                    {
+                        return;
+                    }
+                }
             }
-        }
-        else if (Input.GetKeyUp(KeyCode.L))
-        {
-            BackGroundFloor.finishDash();
+            else if (Input.GetKeyUp(KeyCode.L))
+            {
+                BackGroundFloor.finishDash();
+            }
         }
     }
 
