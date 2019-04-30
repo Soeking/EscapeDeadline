@@ -747,7 +747,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: ddf191c0f61c1e84ea738fa6c3cfc9ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1126,8 +1126,12 @@ MonoBehaviour:
   FloorReal: {fileID: 21300000, guid: 29d6fe66b2b119d4c9d6d29f8ddd3b9d, type: 3}
   FloorDream: {fileID: 21300000, guid: d0e7f0b6822d247458fbfcd83ab5c341, type: 3}
   Screen: {fileID: 272858510}
-  Dream: {fileID: 8300000, guid: a37ebb9fb9960814baa68a79f4ff6b62, type: 3}
-  Real: {fileID: 8300000, guid: 41d674d602382694f8a68203af6c248d, type: 3}
+  Dream:
+  - {fileID: 8300000, guid: 287cd35b2fc819b409d41ae20c52bffc, type: 3}
+  - {fileID: 8300000, guid: a37ebb9fb9960814baa68a79f4ff6b62, type: 3}
+  Real:
+  - {fileID: 8300000, guid: 7fb8cbef425087044b50ce742bff2e0f, type: 3}
+  - {fileID: 8300000, guid: 41d674d602382694f8a68203af6c248d, type: 3}
 --- !u!4 &931412868
 Transform:
   m_ObjectHideFlags: 0
@@ -1152,7 +1156,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a37ebb9fb9960814baa68a79f4ff6b62, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 287cd35b2fc819b409d41ae20c52bffc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
