@@ -46,6 +46,8 @@ public class Objects : MonoBehaviour
                             GameObject obj = Instantiate(enemyObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                             obj.name = "Enemy" + i.ToString() + j.ToString();
                             obj.AddComponent<WallCollision>();
+                            obj.GetComponent<WallCollision>().redObj = redObj;
+                            obj.GetComponent<WallCollision>().monsterObj = monsterObj;
                         }
                         break;
                     case "red":
@@ -123,6 +125,8 @@ public class Objects : MonoBehaviour
                         GameObject obj = Instantiate(enemyObj, new Vector3(SpawnY, yPosition[i], 0), Quaternion.identity);
                         obj.name = "Enemy" + i.ToString();
                         obj.AddComponent<WallCollision>();
+                        obj.GetComponent<WallCollision>().redObj = redObj;
+                        obj.GetComponent<WallCollision>().monsterObj = monsterObj;
                         if (!GlobalData.isDream)
                         {
                             obj.GetComponent<SpriteRenderer>().enabled = false;
@@ -135,6 +139,8 @@ public class Objects : MonoBehaviour
                         GameObject obj = Instantiate(redObj, new Vector3(SpawnY, yPosition[i], 0), Quaternion.identity);
                         obj.name = "Red" + i.ToString();
                         obj.AddComponent<WallCollision>();
+                        obj.GetComponent<WallCollision>().redObj = redObj;
+                        obj.GetComponent<WallCollision>().monsterObj = monsterObj;
                     }
                     break;
                 case "monster":

@@ -6,6 +6,9 @@ public class WallCollision : MonoBehaviour
 {
     Quaternion quaternion;
     Vector3 position;
+    public GameObject redObj;
+    public GameObject monsterObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +29,20 @@ public class WallCollision : MonoBehaviour
                     break;
                 }
         }
+
+        int temp = 0;
+        float sub = float.MaxValue;
+
         for(int i = 0; i < GlobalData.yPosition.Length; i++)
         {
-            if (gameObject.transform.position.y == GlobalData.yPosition[i]) gameObject.layer = 12 - i;
+            float te = gameObject.transform.position.y - GlobalData.yPosition[i];
+            if(Mathf.Abs(te) <= Mathf.Abs(sub))
+            {
+                sub = te;
+                temp = i;
+            }
         }
+        gameObject.layer = -temp + 12;
     }
 
     // Update is called once per frame
@@ -62,7 +75,27 @@ public class WallCollision : MonoBehaviour
     {
         if(collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
         {
-            BackGroundFloor.onStop();
+            if (gameObject.tag == "enemy" && Human.Attacking)
+            {
+                int Ran = (int)Random.Range(0.0f, 10.0f);
+                if(Ran < 2)
+                {
+                    GameObject obj = Instantiate(redObj, gameObject.transform.position, Quaternion.identity);
+                    obj.name = "Red";
+                    obj.AddComponent<WallCollision>();
+                }
+                else if(Ran < 4)
+                {
+                    GameObject obj = Instantiate(monsterObj, gameObject.transform.position, Quaternion.identity);
+                    obj.name = "Monster";
+                    obj.AddComponent<WallCollision>();
+                }
+                Destroy(gameObject);
+            }
+            else
+            {
+                BackGroundFloor.onStop();
+            }
         }
     }
 

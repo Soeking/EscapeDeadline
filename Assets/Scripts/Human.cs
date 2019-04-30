@@ -23,6 +23,9 @@ public class Human : MonoBehaviour
     public GameObject change;
     public Slider staminaSlider;
 
+    public static bool Attacking = false;
+    private float AttackTime = 0.0f;
+
     Quaternion quaternion;
 
     // Start is called before the first frame update
@@ -39,6 +42,7 @@ public class Human : MonoBehaviour
         if (!GlobalData.isBlackOut)
         {
             this.Moving();
+            this.Attack();
             useItem();
         }
 
@@ -130,16 +134,32 @@ public class Human : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "red")
+        if (collision.gameObject.tag == "red" && collision.gameObject.layer == gameObject.layer)
         {
             Destroy(collision.gameObject);
             this.stamina += 3.0f;
             if (this.stamina > 20.0f) this.stamina = 20.0f;
             staminaSlider.value = stamina;
         }
-        if(collision.gameObject.tag == "monster")
+        if (collision.gameObject.tag == "monster" && collision.gameObject.layer == gameObject.layer)
+        {
+            Destroy(collision.gameObject);
+            this.canChange = true;
+        }//*/
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "red" && collision.gameObject.layer == gameObject.layer)
+        {
+            Destroy(collision.gameObject);
+            this.stamina += 3.0f;
+            if (this.stamina > 20.0f) this.stamina = 20.0f;
+            staminaSlider.value = stamina;
+        }
+        if(collision.gameObject.tag == "monster" && collision.gameObject.layer == gameObject.layer)
         {
             Destroy(collision.gameObject);
             this.canChange = true;
@@ -169,6 +189,26 @@ public class Human : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.L))
         {
             BackGroundFloor.finishDash();
+        }
+    }
+
+    void Attack()
+    {
+        if(!Attacking)
+        {
+            if(Input.GetKey(KeyCode.J))
+            {
+                Attacking = true;
+                AttackTime = 0.0f;
+            }
+        }
+        else
+        {
+            AttackTime += Time.deltaTime;
+            if(AttackTime >= 0.75f)
+            {
+                Attacking = false;
+            }
         }
     }
 }
