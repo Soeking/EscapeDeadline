@@ -8,7 +8,10 @@ public class WallCollision : MonoBehaviour
     Vector3 position;
     public GameObject redObj;
     public GameObject monsterObj;
-    
+
+    public AudioClip[] SE;
+    public AudioSource audiosource;
+
     void Start()
     {
         this.position = gameObject.transform.position;
@@ -93,6 +96,9 @@ public class WallCollision : MonoBehaviour
             }
             else
             {
+                if (gameObject.tag == "enemy") audiosource.PlayOneShot(SE[2]);
+                if (gameObject.tag == "cat") audiosource.PlayOneShot(SE[1]);
+                if (gameObject.tag == "car") audiosource.PlayOneShot(SE[0]);
                 BackGroundFloor.onStop();
                 GlobalData.isStop = true;
             }

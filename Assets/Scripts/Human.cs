@@ -24,6 +24,9 @@ public class Human : MonoBehaviour
     public Slider staminaSlider;
     public Image canRedBull;
 
+    public AudioClip[] SE;
+    public AudioSource audiosource;
+
     public static bool Attacking = false;
     private float AttackTime = 0.0f;
 
@@ -165,12 +168,14 @@ public class Human : MonoBehaviour
             this.stamina += 3.0f;
             if (this.stamina > 20.0f) this.stamina = 20.0f;
             staminaSlider.value = stamina;
+            audiosource.PlayOneShot(SE[1]);
         }
         if(collision.gameObject.tag == "monster" && collision.gameObject.layer == gameObject.layer)
         {
             Destroy(collision.gameObject);
             this.canChange = true;
             canRedBull.GetComponent<Image>().enabled = true;
+            audiosource.PlayOneShot(SE[1]);
         }
     }
 
@@ -214,6 +219,7 @@ public class Human : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.J))
             {
+                audiosource.PlayOneShot(SE[0]);
                 Attacking = true;
                 AttackTime = 0.0f;
             }

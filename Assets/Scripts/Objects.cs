@@ -11,6 +11,9 @@ public class Objects : MonoBehaviour
     public GameObject monsterObj;
     private float moving = 0f;
     private float[] yPosition = GlobalData.yPosition;
+
+    public AudioClip[] SE;
+    public AudioSource audiosource;
     
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,8 @@ public class Objects : MonoBehaviour
                             GameObject obj = Instantiate(carObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                             obj.name = "Car" + i.ToString() + j.ToString();
                             obj.AddComponent<WallCollision>();
+                            obj.GetComponent<WallCollision>().audiosource = this.audiosource;
+                            obj.GetComponent<WallCollision>().SE = this.SE;
                         }
                         break;
                     case "cat":
@@ -39,6 +44,8 @@ public class Objects : MonoBehaviour
                             GameObject obj = Instantiate(catObj, new Vector3((i - 5) * 2, yPosition[j], 0), Quaternion.identity);
                             obj.name = "Cat" + i.ToString() + j.ToString();
                             obj.AddComponent<WallCollision>();
+                            obj.GetComponent<WallCollision>().audiosource = this.audiosource;
+                            obj.GetComponent<WallCollision>().SE = this.SE;
                         }
                         break;
                     case "enemy":
@@ -48,6 +55,8 @@ public class Objects : MonoBehaviour
                             obj.AddComponent<WallCollision>();
                             obj.GetComponent<WallCollision>().redObj = redObj;
                             obj.GetComponent<WallCollision>().monsterObj = monsterObj;
+                            obj.GetComponent<WallCollision>().audiosource = this.audiosource;
+                            obj.GetComponent<WallCollision>().SE = this.SE;
                         }
                         break;
                     case "red":
@@ -103,6 +112,8 @@ public class Objects : MonoBehaviour
                         GameObject obj = Instantiate(carObj, new Vector3(SpawnY, yPosition[i], 0), Quaternion.identity);
                         obj.name = "Car" + i.ToString();
                         obj.AddComponent<WallCollision>();
+                        obj.GetComponent<WallCollision>().audiosource = this.audiosource;
+                        obj.GetComponent<WallCollision>().SE = this.SE;
                         if (!GlobalData.isDream)
                         {
                             obj.GetComponent<SpriteRenderer>().enabled = true;
@@ -114,6 +125,8 @@ public class Objects : MonoBehaviour
                         GameObject obj = Instantiate(catObj, new Vector3(SpawnY, yPosition[i], 0), Quaternion.identity);
                         obj.name = "Cat" + i.ToString();
                         obj.AddComponent<WallCollision>();
+                        obj.GetComponent<WallCollision>().audiosource = this.audiosource;
+                        obj.GetComponent<WallCollision>().SE = this.SE;
                         if (!GlobalData.isDream)
                         {
                             obj.GetComponent<SpriteRenderer>().enabled = true;
@@ -127,6 +140,8 @@ public class Objects : MonoBehaviour
                         obj.AddComponent<WallCollision>();
                         obj.GetComponent<WallCollision>().redObj = redObj;
                         obj.GetComponent<WallCollision>().monsterObj = monsterObj;
+                        obj.GetComponent<WallCollision>().audiosource = this.audiosource;
+                        obj.GetComponent<WallCollision>().SE = this.SE;
                         if (!GlobalData.isDream)
                         {
                             obj.GetComponent<SpriteRenderer>().enabled = false;
