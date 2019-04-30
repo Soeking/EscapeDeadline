@@ -23,6 +23,9 @@ public class Human : MonoBehaviour
     public GameObject change;
     public Slider staminaSlider;
 
+    public static bool Attacking = false;
+    private float AttackTime = 0.0f;
+
     Quaternion quaternion;
 
     // Start is called before the first frame update
@@ -39,6 +42,7 @@ public class Human : MonoBehaviour
         if (!GlobalData.isBlackOut)
         {
             this.Moving();
+            this.Attack();
             useItem();
         }
 
@@ -93,6 +97,7 @@ public class Human : MonoBehaviour
                 myTransform.position = pos;//*/
                 gameObject.layer += 1;
                 UpDown = true;
+                GlobalData.isStop = false;
             }
             if (Input.GetKey(KeyCode.S) && layer > 8)
             {
@@ -103,6 +108,7 @@ public class Human : MonoBehaviour
                 gameObject.layer -= 1;
                 Jumping = true;
                 UpDown = true;
+                GlobalData.isStop = false;
             }
         }
         else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
@@ -130,16 +136,32 @@ public class Human : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "red")
+        if (collision.gameObject.tag == "red" && collision.gameObject.layer == gameObject.layer)
         {
             Destroy(collision.gameObject);
             this.stamina += 3.0f;
             if (this.stamina > 20.0f) this.stamina = 20.0f;
             staminaSlider.value = stamina;
         }
-        if(collision.gameObject.tag == "monster")
+        if (collision.gameObject.tag == "monster" && collision.gameObject.layer == gameObject.layer)
+        {
+            Destroy(collision.gameObject);
+            this.canChange = true;
+        }//*/
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "red" && collision.gameObject.layer == gameObject.layer)
+        {
+            Destroy(collision.gameObject);
+            this.stamina += 3.0f;
+            if (this.stamina > 20.0f) this.stamina = 20.0f;
+            staminaSlider.value = stamina;
+        }
+        if(collision.gameObject.tag == "monster" && collision.gameObject.layer == gameObject.layer)
         {
             Destroy(collision.gameObject);
             this.canChange = true;
@@ -153,22 +175,49 @@ public class Human : MonoBehaviour
             if (canChange)
             {
                 _changeSprite.changeSprites();
-                //this.canChange = false;
+                this.canChange = false;
             }
         }
 
-        if (Input.GetKey(KeyCode.L))
+        if (!GlobalData.isStop)
         {
-            if (stamina>0)
+            if (Input.GetKey(KeyCode.L))
             {
-                stamina -= Time.deltaTime * 2;
-                BackGroundFloor.isDash();
-                staminaSlider.value = stamina;
+                if (stamina > 0)
+                {
+                    stamina -= Time.deltaTime * 2;
+                    BackGroundFloor.isDash();
+                    staminaSlider.value = stamina;
+                    if (stamina <= 0)
+                    {
+                        return;
+                    }
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.L))
+            {
+                BackGroundFloor.finishDash();
             }
         }
-        else if (Input.GetKeyUp(KeyCode.L))
+    }
+
+    void Attack()
+    {
+        if(!Attacking)
         {
-            BackGroundFloor.finishDash();
+            if(Input.GetKey(KeyCode.J))
+            {
+                Attacking = true;
+                AttackTime = 0.0f;
+            }
+        }
+        else
+        {
+            AttackTime += Time.deltaTime;
+            if(AttackTime >= 0.75f)
+            {
+                Attacking = false;
+            }
         }
     }
 }

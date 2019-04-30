@@ -13,7 +13,7 @@ public class Result : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score.text = "SCORE : "+GlobalData.score;
+        score.text = "SCORE : " + GlobalData.score + " m";
     }
 
     // Update is called once per frame
