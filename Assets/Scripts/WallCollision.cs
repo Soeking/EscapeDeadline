@@ -76,7 +76,7 @@ public class WallCollision : MonoBehaviour
         {
             if (gameObject.tag == "enemy" && Human.Attacking)
             {
-                int Ran = (int)Random.Range(0.0f, 10.0f);
+                int Ran = (int)Random.Range(0.0f, 8.0f);
                 if(Ran < 2)
                 {
                     GameObject obj = Instantiate(redObj, gameObject.transform.position, Quaternion.identity);
@@ -95,6 +95,32 @@ public class WallCollision : MonoBehaviour
             {
                 BackGroundFloor.onStop();
                 GlobalData.isStop = true;
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
+        {
+            if (gameObject.tag == "enemy" && Human.Attacking)
+            {
+                int Ran = (int)Random.Range(0.0f, 8.0f);
+                if (Ran < 2)
+                {
+                    GameObject obj = Instantiate(redObj, gameObject.transform.position, Quaternion.identity);
+                    obj.name = "Red";
+                    obj.AddComponent<WallCollision>();
+                }
+                else if (Ran < 4)
+                {
+                    GameObject obj = Instantiate(monsterObj, gameObject.transform.position, Quaternion.identity);
+                    obj.name = "Monster";
+                    obj.AddComponent<WallCollision>();
+                }
+                Destroy(gameObject);
+                BackGroundFloor.finishDash();
+                GlobalData.isStop = false;
             }
         }
     }
