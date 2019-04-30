@@ -933,6 +933,11 @@ MonoBehaviour:
   change: {fileID: 931412866}
   staminaSlider: {fileID: 1994819251}
   canRedBull: {fileID: 1696034069}
+  SE:
+  - {fileID: 8300000, guid: 48c0541103c4c0c4bbd3e7ca6e22a9ce, type: 3}
+  - {fileID: 8300000, guid: 876b310c78027d9438ac6c6bff7c630d, type: 3}
+  - {fileID: 8300000, guid: cbc9b2ff962376d4789f18d4a6fa6361, type: 3}
+  audiosource: {fileID: 931412869}
 --- !u!58 &717182031
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1834,6 +1839,12 @@ MonoBehaviour:
   redObj: {fileID: 3781542770993817664, guid: 8a5f0171ba2a874449fd69858c8ce548, type: 3}
   monsterObj: {fileID: 7450367774793313709, guid: 63fb9e91559a93a4797a4b4acc712399,
     type: 3}
+  SE:
+  - {fileID: 8300000, guid: ab6c2564ecfe31747a52feaac2bc40ee, type: 3}
+  - {fileID: 8300000, guid: f5eb15e09832016428b836a5544f5bee, type: 3}
+  - {fileID: 8300000, guid: cbc9b2ff962376d4789f18d4a6fa6361, type: 3}
+  - {fileID: 8300000, guid: 876b310c78027d9438ac6c6bff7c630d, type: 3}
+  audiosource: {fileID: 931412869}
 --- !u!212 &1965666463
 SpriteRenderer:
   m_ObjectHideFlags: 0
