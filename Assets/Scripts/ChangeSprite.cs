@@ -16,8 +16,8 @@ public class ChangeSprite : MonoBehaviour
     public Image Screen;
     private float alpha;
 
-    public AudioClip Dream;
-    public AudioClip Real;
+    public AudioClip[] Dream = new AudioClip[2];
+    public AudioClip[] Real = new AudioClip[2];
     private float SoundTime = 0;
     private AudioSource audioSource;
 
@@ -66,11 +66,15 @@ public class ChangeSprite : MonoBehaviour
     public void changeSprites()
     {
         blackOut();
+
+        int bgm = (int)Random.Range(0.0f, 2.0f);
+        if (bgm >= 2) bgm = 0;
+
         if (GlobalData.isDream)
         {
             audioSource = gameObject.GetComponent<AudioSource>();
             SoundTime = audioSource.time;
-            audioSource.clip = Real;
+            audioSource.clip = Real[bgm];
             audioSource.time = SoundTime;
             audioSource.Play();
 
@@ -110,7 +114,7 @@ public class ChangeSprite : MonoBehaviour
         {
             audioSource = gameObject.GetComponent<AudioSource>();
             SoundTime = audioSource.time;
-            audioSource.clip = Dream;
+            audioSource.clip = Dream[bgm];
             audioSource.time = SoundTime;
             audioSource.Play();
 

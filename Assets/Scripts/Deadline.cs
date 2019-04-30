@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Deadline : MonoBehaviour
 {
-    private float speed = 4f;
+    private float speed = 3f;
     public Text kyori;
     private float far;
     public GameObject Human;
