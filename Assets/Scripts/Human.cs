@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Human : MonoBehaviour
 {
-    private bool canChange = true;
+    private bool canChange = false;
     private bool UpDown = false;
     private bool Jumping = false;
     private const float moveSpeed = 3f;
@@ -22,6 +22,7 @@ public class Human : MonoBehaviour
     private ChangeSprite _changeSprite;
     public GameObject change;
     public Slider staminaSlider;
+    public Image canRedBull;
 
     public static bool Attacking = false;
     private float AttackTime = 0.0f;
@@ -43,7 +44,10 @@ public class Human : MonoBehaviour
         {
             this.Moving();
             this.Attack();
-            useItem();
+            if (GlobalData.isDream)
+            {
+                useItem();
+            }
         }
 
         if (!Jumping)
@@ -149,6 +153,7 @@ public class Human : MonoBehaviour
         {
             Destroy(collision.gameObject);
             this.canChange = true;
+            canRedBull.GetComponent<Image>().enabled = true;
         }//*/
     }
 
@@ -165,6 +170,7 @@ public class Human : MonoBehaviour
         {
             Destroy(collision.gameObject);
             this.canChange = true;
+            canRedBull.GetComponent<Image>().enabled = true;
         }
     }
 
@@ -176,6 +182,7 @@ public class Human : MonoBehaviour
             {
                 _changeSprite.changeSprites();
                 this.canChange = false;
+                canRedBull.GetComponent<Image>().enabled = false;
             }
         }
 
