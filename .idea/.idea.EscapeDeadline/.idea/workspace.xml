@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="496127e4-093e-4e6c-a8a2-777431f3c914" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapeDeadline/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapeDeadline/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EscapeDeadline/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscapeDeadline/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cat.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GamePart.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GamePart.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Result.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Result.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Title.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Title.unity" afterDir="false" />
-    </list>
+    <list default="true" id="496127e4-093e-4e6c-a8a2-777431f3c914" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +202,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Result.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -228,7 +220,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/BackGroundFloor.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
@@ -243,25 +235,6 @@
                 <marker date="1556588792777" expanded="true" signature="1230:1263" ph="{...}" />
                 <marker date="1556588792777" expanded="true" signature="1300:1333" ph="{...}" />
                 <marker date="1556588792777" expanded="true" signature="1366:1398" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Deadline.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-              <folding>
-                <marker date="1556586055269" expanded="false" signature="6:186" ph="..." />
-                <marker date="1556586055269" expanded="true" signature="225:1062" ph="{...}" />
-                <marker date="1556586055269" expanded="true" signature="337:415" ph="/* public Human human; ... */" />
-                <marker date="1556586055269" expanded="true" signature="432:463" ph="{...}" />
-                <marker date="1556586055269" expanded="true" signature="521:899" ph="{...}" />
-                <marker date="1556586055269" expanded="true" signature="563:690" ph="{...}" />
-                <marker date="1556586055269" expanded="true" signature="796:861" ph="{...}" />
-                <marker date="1556586055269" expanded="true" signature="920:1060" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -422,12 +395,12 @@
       <workItem from="1556434343100" duration="10171000" />
       <workItem from="1556460609911" duration="2436000" />
       <workItem from="1556515331522" duration="27234000" />
-      <workItem from="1556585981378" duration="4007000" />
+      <workItem from="1556585981378" duration="4246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53813000" />
+    <option name="totallyTimeSpent" value="54052000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,24 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/BackGroundFloor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <marker date="1556588792777" expanded="false" signature="6:78" ph="..." />
-            <marker date="1556588792777" expanded="true" signature="124:1400" ph="{...}" />
-            <marker date="1556588792777" expanded="true" signature="487:604" ph="{...}" />
-            <marker date="1556588792777" expanded="true" signature="662:1197" ph="{...}" />
-            <marker date="1556588792777" expanded="true" signature="704:1191" ph="{...}" />
-            <marker date="1556588792777" expanded="true" signature="932:1133" ph="{...}" />
-            <marker date="1556588792777" expanded="true" signature="1230:1263" ph="{...}" />
-            <marker date="1556588792777" expanded="true" signature="1300:1333" ph="{...}" />
-            <marker date="1556588792777" expanded="true" signature="1366:1398" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/WallCollision.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -637,23 +592,6 @@
             <marker date="1556588390438" expanded="true" signature="2757:2819" ph="{...}" />
             <marker date="1556588390438" expanded="true" signature="2882:3027" ph="{...}" />
             <marker date="1556588390438" expanded="true" signature="2988:3021" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Deadline.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <marker date="1556586055269" expanded="false" signature="6:186" ph="..." />
-            <marker date="1556586055269" expanded="true" signature="225:1062" ph="{...}" />
-            <marker date="1556586055269" expanded="true" signature="337:415" ph="/* public Human human; ... */" />
-            <marker date="1556586055269" expanded="true" signature="432:463" ph="{...}" />
-            <marker date="1556586055269" expanded="true" signature="521:899" ph="{...}" />
-            <marker date="1556586055269" expanded="true" signature="563:690" ph="{...}" />
-            <marker date="1556586055269" expanded="true" signature="796:861" ph="{...}" />
-            <marker date="1556586055269" expanded="true" signature="920:1060" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -791,6 +729,41 @@
             <marker date="1556585310919" expanded="true" signature="508:885" ph="{...}" />
             <marker date="1556585310919" expanded="true" signature="542:619" ph="{...}" />
             <marker date="1556585310919" expanded="true" signature="636:875" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Deadline.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <marker date="1556586055269" expanded="false" signature="6:186" ph="..." />
+            <marker date="1556586055269" expanded="true" signature="225:1062" ph="{...}" />
+            <marker date="1556586055269" expanded="true" signature="337:415" ph="/* public Human human; ... */" />
+            <marker date="1556586055269" expanded="true" signature="432:463" ph="{...}" />
+            <marker date="1556586055269" expanded="true" signature="521:899" ph="{...}" />
+            <marker date="1556586055269" expanded="true" signature="563:690" ph="{...}" />
+            <marker date="1556586055269" expanded="true" signature="796:861" ph="{...}" />
+            <marker date="1556586055269" expanded="true" signature="920:1060" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/BackGroundFloor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <marker date="1556588792777" expanded="false" signature="6:78" ph="..." />
+            <marker date="1556588792777" expanded="true" signature="124:1400" ph="{...}" />
+            <marker date="1556588792777" expanded="true" signature="487:604" ph="{...}" />
+            <marker date="1556588792777" expanded="true" signature="662:1197" ph="{...}" />
+            <marker date="1556588792777" expanded="true" signature="704:1191" ph="{...}" />
+            <marker date="1556588792777" expanded="true" signature="932:1133" ph="{...}" />
+            <marker date="1556588792777" expanded="true" signature="1230:1263" ph="{...}" />
+            <marker date="1556588792777" expanded="true" signature="1300:1333" ph="{...}" />
+            <marker date="1556588792777" expanded="true" signature="1366:1398" ph="{...}" />
           </folding>
         </state>
       </provider>
