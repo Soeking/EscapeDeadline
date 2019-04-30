@@ -28,7 +28,7 @@ public class Deadline : MonoBehaviour
             this.gameObject.transform.Translate(Time.deltaTime * (speed + BackGroundFloor.speed), 0f, 0f);
         }
 
-        far = Human.transform.position.x - this.gameObject.transform.position.x;
+        far = Human.transform.position.x - this.gameObject.transform.position.x - 2;
         if (far<=0)
         {
             far = 0;

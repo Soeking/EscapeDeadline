@@ -6,6 +6,7 @@ public class WallCollision : MonoBehaviour
 {
     Quaternion quaternion;
     Vector3 position;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +64,7 @@ public class WallCollision : MonoBehaviour
         if(collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
         {
             BackGroundFloor.onStop();
+            GlobalData.isStop = true;
         }
     }
 
@@ -71,6 +73,7 @@ public class WallCollision : MonoBehaviour
         if (collision.gameObject.layer == gameObject.layer && collision.gameObject.tag == "Player")
         {
             BackGroundFloor.finishDash();
+            GlobalData.isStop = false;
         }
     }
 
