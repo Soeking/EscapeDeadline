@@ -19,6 +19,10 @@ public class Title : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            SceneManager.LoadScene("Explain");
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (second)
